@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Báu da Memória</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+    </style>
+</head>
+
+<body>
+    <div id="fundoPreto"></div>
+
+    <header>
+        <div class="tema">
+            <form>
+                <select id="temas" name="temas">
+                    <option value="primeiro" selected>Escolha outro tema
+                        <p>▼</p>
+                    </option>
+                    <option value="futebol">Futebol</option>
+                    <option value="paises">Países</option>
+                    <option value="personagens">Personagens</option>
+                    <option value="eventos">Eventos Marcantes</option>
+                    <option value="filmes">Filmes Clássicos</option>
+                    <option value="livros">Livros Clássicos</option>
+                    <option value="musicas80">Músicas Anos 80</option>
+                    <option value="musicas70">Músicas Anos 70</option>
+                    <option value="musicas60">Músicas Anos 60</option>
+                </select>
+            </form>
+        </div>
+
+        <button type="button" id="acertados" onclick="sidebar('menu-lateral','menuInfo','fundoPreto')">Acertados</button>
+    </header>
+
+    <!-- Menu que abre ao clicar no "+ informações" no menu lateral -->
+
+    <div id="menuInfo">
+        <div class="conteudoInfo">
+            <p class="titulo">
+                Elvis Aaron Presley
+            </p>
+            <p class="texto">
+                foi um cantor, músico e ator estadunidense. Tido como um dos mais significantes ícones 
+                culturais populares do século XX, ele é frequentemente chamado de o Rei do Rock, ou simplesmente 
+                "O Rei". Suas músicas mais conhecidas são: My Way, 
+                Suspicious Minds e Can't Help Falling In Love
+            </p>
+        </div>
+        <button class="voltar" type="button" onclick="preto('fundoPreto'); info('menuInfo','botaoInfo');" >Voltar</button>
+    </div>
+
+    <!-- Tabuleiro com as cartas do jogo -->
+
+    <div id="tabuleiro">
+        <div class="carta flip">
+            <div class="frente">
+                <div class="bau">
+                    <img draggable="false" src="bau.png">
+                </div>
+            </div>
+            <div class="tras">
+                <div class="conteudo" id="1">
+                </div>
+            </div>
+        </div>
+        <div class="carta flip">
+            <div class="frente">
+                <div class="bau">
+                    <img draggable="false" src="bau.png">
+                </div>
+            </div>
+            <div class="tras">
+                <div class="conteudo" id="2">
+                </div>
+            </div>
+        </div>
+        <div class="carta flip">
+            <div class="frente">
+                <div class="bau">
+                    <img draggable="false" src="bau.png">
+                </div>
+            </div>
+            <div class="tras">
+                <div class="conteudo" id="3">
+                </div>
+            </div>
+        </div>
+        <div class="carta flip">
+            <div class="frente">
+                <div class="bau">
+                    <img draggable="false" src="bau.png">
+                </div>
+            </div>
+            <div class="tras">
+                <div class="conteudo" id="4">
+                </div>
+            </div>
+        </div>
+        <div class="carta flip">
+            <div class="frente">
+                <div class="bau">
+                    <img draggable="false" src="bau.png">
+                </div>
+            </div>
+            <div class="tras">
+                <div class="conteudo" id="5">
+                </div>
+            </div>
+        </div>
+        <div class="carta flip">
+            <div class="frente">
+                <div class="bau">
+                    <img draggable="false" src="bau.png">
+                </div>
+            </div>
+            <div class="tras">
+                <div class="conteudo" id="6">
+                </div>
+            </div>
+        </div>
+        <div class="carta flip">
+            <div class="frente">
+                <div class="bau">
+                    <img draggable="false" src="bau.png">
+                </div>
+            </div>
+            <div class="tras">
+                <div class="conteudo" id="7">
+                </div>
+            </div>
+        </div>
+        <div class="carta flip">
+            <div class="frente">
+                <div class="bau">
+                    <img draggable="false" src="bau.png">
+                </div>
+            </div>
+            <div class="tras">
+                <div class="conteudo" id="8">
+                </div>
+            </div>
+        </div>
+        <div class="carta flip">
+            <div class="frente">
+                <div class="bau">
+                    <img draggable="false" src="bau.png">
+                </div>
+            </div>
+            <div class="tras">
+                <div class="conteudo" id="9">
+                </div>
+            </div>
+        </div>
+        <div class="carta flip">
+            <div class="frente">
+                <div class="bau">
+                    <img draggable="false" src="bau.png">
+                </div>
+            </div>
+            <div class="tras">
+                <div class="conteudo" id="10">
+                </div>
+            </div>
+        </div>
+        <div class="carta flip">
+            <div class="frente">
+                <div class="bau">
+                    <img draggable="false" src="bau.png">
+                </div>
+            </div>
+            <div class="tras">
+                <div class="conteudo" id="11">
+                </div>
+            </div>
+        </div>
+        <div class="carta flip">
+            <div class="frente">
+                <div class="bau">
+                    <img draggable="false" src="bau.png">
+                </div>
+            </div>
+            <div class="tras">
+                <div class="conteudo" id="12">
+                </div>
+            </div>
+        </div>
+        <div class="carta flip">
+            <div class="frente">
+                <div class="bau">
+                    <img draggable="false" src="bau.png">
+                </div>
+            </div>
+            <div class="tras">
+                <div class="conteudo" id="13">
+                </div>
+            </div>
+        </div>
+        <div class="carta flip">
+            <div class="frente">
+                <div class="bau">
+                    <img draggable="false" src="bau.png">
+                </div>
+            </div>
+            <div class="tras">
+                <div class="conteudo" id="14">
+                </div>
+            </div>
+        </div>
+        <div class="carta flip">
+            <div class="frente">
+                <div class="bau">
+                    <img draggable="false" src="bau.png">
+                </div>
+            </div>
+            <div class="tras">
+                <div class="conteudo" id="15">
+                    Elvis
+                </div>
+            </div>
+        </div>
+        <div class="carta flip">
+            <div class="frente">
+                <div class="bau">
+                    <img draggable="false" src="bau.png">
+                </div>
+            </div>
+            <div class="tras">
+                <div class="conteudo" id="16">
+                    _______ era um cantor sei lá das quantas
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Menu lateral na direita ao apertar o botão "Acertados" -->
+
+    <div id="menu-lateral">
+        <div class="cartaAcertada">
+            <div class="informacao">Elvis era um cantor sei lá das quantas.</div>
+            <button class="botaoInfo" id="botaoInfo" type="button" onclick="preto('fundoPreto'); info('menuInfo')">
+                <p>+ informações</p>
+            </button>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="feature.js"></script>
+</body>
+</html>
