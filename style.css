@@ -146,8 +146,12 @@ body {
     right:0;
     top: 0;
     display: none;
-    padding: 0px 10px
+    padding: 0px 10px;
+    overflow-y: auto;
+    
 }
+
+
 
 /* Info que abre no menu lateral */
 
@@ -157,7 +161,7 @@ body {
     box-shadow: 4px 4px rgb(59, 35, 24);
     border-radius: 15px;
     height: 14rem;
-    margin-top: 8rem;
+    margin-top: 4rem;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -231,3 +235,6 @@ body {
     padding: 5px 15px;
     cursor: pointer;
 }
+
+
+
