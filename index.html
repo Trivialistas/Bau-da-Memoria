@@ -1,303 +1,34 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Báu da Memória</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
-    </style>
+    <title>Baú da Memória</title>
+    <link rel="stylesheet" href="menu.css"/> 
 </head>
 
-<body>
-    <div id="fundoPreto"></div>
+<body>  
+    <div class="menu">
+        <img src="BAU.png" draggable="false">
+        <p class="titulo">Baú da Memória</p>
+    </div>  
 
-    <header>
-        <button onclick = "goSidebar('E')" style="width: 100px; height: 100px; background-color: aliceblue;" ></button>
-        <div class="tema">
-            <form>
-                <select id="temas" name="temas">
-                    <option value="primeiro" selected>Escolha outro tema
-                        <p>▼</p>
-                    </option>
-                    <option value="futebol">Futebol</option>
-                    <option value="paises">Países</option>
-                    <option value="personagens">Personagens</option>
-                    <option value="eventos">Eventos Marcantes</option>
-                    <option value="filmes">Filmes Clássicos</option>
-                    <option value="livros">Livros Clássicos</option>
-                    <option value="musicas80">Músicas Anos 80</option>
-                    <option value="musicas70">Músicas Anos 70</option>
-                    <option value="musicas60">Músicas Anos 60</option>
-                </select>
-            </form>
-        </div>
-
-        <button type="button" id="acertados" onclick="sidebar('menu-lateral','menuInfo','fundoPreto')">Acertados</button>
-    </header>
-
-    <!-- Menu que abre ao clicar no "+ informações" no menu lateral -->
-
-    <div id="menuInfo">
-        <div class="conteudoInfo">
-            <p class="titulo">
-                Elvis Aaron Presley
-            </p>
-            <p class="texto">
-                foi um cantor, músico e ator estadunidense. Tido como um dos mais significantes ícones 
-                culturais populares do século XX, ele é frequentemente chamado de o Rei do Rock, ou simplesmente 
-                "O Rei". Suas músicas mais conhecidas são: My Way, 
-                Suspicious Minds e Can't Help Falling In Love
-            </p>
-        </div>
-        <button class="voltar" type="button" onclick="preto('fundoPreto'); info('menuInfo','botaoInfo');" >Voltar</button>
-    </div>
-
-    <!-- Tabuleiro com as cartas do jogo -->
-
-    <div id="tabuleiro">
-        <div class="carta flip">
-            <div class="frente click">
-                <div class="bau click">
-                    <img class="click" draggable="false" src="bau.png">
-                </div>
-            </div>
-            <div class="tras click">
-                <div class="conteudo click" id="0">
-                    _______ era um cantor sei lá das quantas
-                </div>
-            </div>
-        </div>
-        <div class="carta flip">
-            <div class="frente click">
-                <div class="bau click">
-                    <img class="click" draggable="false" src="bau.png">
-                </div>
-            </div>
-            <div class="tras click">
-                <div class="conteudo click" id="1">
-                </div>
-            </div>
-        </div>
-        <div class="carta flip">
-            <div class="frente click">
-                <div class="bau click">
-                    <img class="click" draggable="false" src="bau.png">
-                </div>
-            </div>
-            <div class="tras click">
-                <div class="conteudo click" id="2">
-                </div>
-            </div>
-        </div>
-        <div class="carta flip">
-            <div class="frente click">
-                <div class="bau click">
-                    <img class="click" draggable="false" src="bau.png">
-                </div>
-            </div>
-            <div class="tras click">
-                <div class="conteudo click" id="3">
-                </div>
-            </div>
-        </div>
-        <div class="carta flip">
-            <div class="frente click">
-                <div class="bau click">
-                    <img class="click" draggable="false" src="bau.png">
-                </div>
-            </div>
-            <div class="tras click">
-                <div class="conteudo click" id="4">
-                </div>
-            </div>
-        </div>
-        <div class="carta flip">
-            <div class="frente click">
-                <div class="bau click">
-                    <img class="click" draggable="false" src="bau.png">
-                </div>
-            </div>
-            <div class="tras click">
-                <div class="conteudo click" id="5">
-                </div>
-            </div>
-        </div>
-        <div class="carta flip">
-            <div class="frente click">
-                <div class="bau click">
-                    <img class="click" draggable="false" src="bau.png">
-                </div>
-            </div>
-            <div class="tras click">
-                <div class="conteudo click" id="6">
-                </div>
-            </div>
-        </div>
-        <div class="carta flip">
-            <div class="frente click">
-                <div class="bau click">
-                    <img class="click" draggable="false" src="bau.png">
-                </div>
-            </div>
-            <div class="tras click">
-                <div class="conteudo click" id="7">
-                </div>
-            </div>
-        </div>
-        <div class="carta flip">
-            <div class="frente click">
-                <div class="bau click">
-                    <img class="click" draggable="false" src="bau.png">
-                </div>
-            </div>
-            <div class="tras click">
-                <div class="conteudo click" id="8">
-                </div>
-            </div>
-        </div>
-        <div class="carta flip">
-            <div class="frente click">
-                <div class="bau click">
-                    <img class="click" draggable="false" src="bau.png">
-                </div>
-            </div>
-            <div class="tras click">
-                <div class="conteudo click" id="9">
-                </div>
-            </div>
-        </div>
-        <div class="carta flip">
-            <div class="frente click">
-                <div class="bau click">
-                    <img class="click" draggable="false" src="bau.png">
-                </div>
-            </div>
-            <div class="tras click">
-                <div class="conteudo click" id="10">
-                </div>
-            </div>
-        </div>
-        <div class="carta flip">
-            <div class="frente click">
-                <div class="bau click">
-                    <img class="click" draggable="false" src="bau.png">
-                </div>
-            </div>
-            <div class="tras click">
-                <div class="conteudo click" id="11">
-                </div>
-            </div>
-        </div>
-        <div class="carta flip">
-            <div class="frente click">
-                <div class="bau click">
-                    <img class="click" draggable="false" src="bau.png">
-                </div>
-            </div>
-            <div class="tras click">
-                <div class="conteudo click" id="12">
-                </div>
-            </div>
-        </div>
-        <div class="carta flip">
-            <div class="frente click">
-                <div class="bau click">
-                    <img class="click" draggable="false" src="bau.png">
-                </div>
-            </div>
-            <div class="tras click">
-                <div class="conteudo click" id="13">
-                </div>
-            </div>
-        </div>
-        <div class="carta flip">
-            <div class="frente click">
-                <div class="bau click">
-                    <img class="click" draggable="false" src="bau.png">
-                </div>
-            </div>
-            <div class="tras click">
-                <div class="conteudo click" id="14">
-                </div>
-            </div>
-        </div>
-        <div class="carta flip">
-            <div class="frente click">
-                <div class="bau click">
-                    <img class="click" draggable="false" src="bau.png">
-                </div>
-            </div>
-            <div class="tras click">
-                <div class="conteudo click" id="15">
-                    Elvis
-                </div>
-            </div>
-        </div>
-        
-    </div>
-
-    <!-- Menu lateral na direita ao apertar o botão "Acertados" -->
-
-    <div id="menu-lateral">
-        <br>
-        <br>
-        <br>
-        <div class="cartaAcertada" id = "1000" style="display:none">
-            <div class="informacao" id = "100"></div>
-            <button class="botaoInfo" id="botaoInfo" type="button" onclick="preto('fundoPreto'); info('menuInfo')">
-                <p>+ informações</p>
-            </button>
-        </div>
-        <div class="cartaAcertada" id = "2000" style="display:none">
-            <div class="informacao" id="200"></div>
-            <button class="botaoInfo" id="botaoInfo" type="button" onclick="preto('fundoPreto'); info('menuInfo')">
-                <p>+ informações</p>
-            </button>
-        </div>
-        <div class="cartaAcertada" id = "3000" style="display:none">
-            <div class="informacao" id="300"></div>
-            <button class="botaoInfo" id="botaoInfo" type="button" onclick="preto('fundoPreto'); info('menuInfo')">
-                    <p>+ informações</p>
-            </button>
-            
-        </div>
-        <div class="cartaAcertada" id = "4000" style="display:none">
-            <div class="informacao" id="400"></div>
-            <button class="botaoInfo" id="botaoInfo" type="button" onclick="preto('fundoPreto'); info('menuInfo')">
-                <p>+ informações</p>
-            </button>
-        </div>
-        <div class="cartaAcertada" id = "5000" style="display:none">
-            <div class="informacao" id="500"></div>
-            <button class="botaoInfo" id="botaoInfo" type="button" onclick="preto('fundoPreto'); info('menuInfo')">
-                <p>+ informações</p>
-            </button>
-        </div>
-        <div class="cartaAcertada" id = "6000" style="display:none">
-            <div class="informacao" id="600"></div>
-            <button class="botaoInfo" id="botaoInfo" type="button" onclick="preto('fundoPreto'); info('menuInfo')">
-                <p>+ informações</p>
-            </button>
-        </div>
-        <div class="cartaAcertada" id = "7000" style="display:none">
-            <div class="informacao" id="700"></div>
-            <button class="botaoInfo" id="botaoInfo" type="button" onclick="preto('fundoPreto'); info('menuInfo')">
-                <p>+ informações</p>
-            </button>
-        </div>
-        <div class="cartaAcertada" id = "8000" style="display:none">
-            <div class="informacao" id="800"></div>
-            <button class="botaoInfo" id="botaoInfo" type="button" onclick="preto('fundoPreto'); info('menuInfo')">
-                <p>+ informações</p>
-            </button>
-        </div>
-        
-        
-    </div>
-
-    <script type="text/javascript" src="feature.js"></script>
+    <form action="/jogo.html" id="Botoes">
+        <label for="escolherTema">Escolher o tema:</label>
+        <select required id="escolherTema" onfocus='this.size=6;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
+            <option onclick="escolheTema(this.value)" value="Músicas anos 60">Músicas anos 60</option>
+            <option onclick="escolheTema(this.value)" value="Músicas anos 70">Músicas anos 70</option>
+            <option onclick="escolheTema(this.value)" value="Músicas anos 80">Músicas anos 80</option>
+            <option onclick="escolheTema(this.value)" value="Filmes Clássicos">Filmes Clássicos</option>
+            <option onclick="escolheTema(this.value)" value="Famosos">Famosos</option>
+            <option onclick="escolheTema(this.value)" value="Livros">Livros</option>
+            <option onclick="escolheTema(this.value)" value="Futebol">Futebol</option>
+            <option onclick="escolheTema(this.value)" value="Carros">Carros</option>
+        </select>
+        <input type="submit" class="botao" value="Jogar" />
+    </form>
 </body>
+
 </html>
