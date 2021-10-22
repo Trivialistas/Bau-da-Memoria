@@ -6,8 +6,6 @@
 
 // ver o total na sidebar e abrir novas informações
 
-
-
 let fundo = false;
 let quadrado = false;
 let sidebarra = false;
@@ -27,6 +25,7 @@ const testeJson = [
 
 window.onload = makeInfo();
 function makeInfo(){
+    
     let vetorCartas = [];
     let x;
     for(x = 0; x < testeJson.length; x++){
@@ -41,64 +40,38 @@ function makeInfo(){
     }
 }
 
-
 function checkCard(x,y){ 
-    let achou = 0;
-    
-    for(let a = 0; a < testeJson.length; a++){
-        console.log(testeJson[a].card1, testeJson[a].card2, x, y)
+        for(let a = 0; a < testeJson.length; a++){
         if(testeJson[a].card1 == x){
             if(testeJson[a].card2 == y){
-                achou = 1;
                 return 1;
             }
-        }
-        else if(testeJson[a].card2 == x){
-            if(testeJson[a].card1 == y){
-                achou = 1;
-                return 1;
-            }
-        }
-    }
-
-    // for(let a = 0; a < testeJson.length; a++){
-    //     if(testeJson[a].card2 == x){
-    //         if(testeJson[a].card1 == y){
-    //             achou = 1;
-    //             return 1;
-    //         }
-    //     }
-    // }
-
-    if (achou == 0){
-        return 0;
-    }
-
-}
-
-
-function goSidebar(var1){
-    console.log("ENTROU AQUI");
-    for(let a = 1; a < testeJson.length+1; a++){
-        console.log("passei aqui" + a);
-
-        if(testeJson[a-1].card1 == var1){
-            var conv = a*1000;
-            console.log(conv);    
-            var conv2 = a*100;
-            console.log(conv2);
-            document.getElementById(conv.toString()).style.display='flex';
-            document.getElementById(conv2.toString()).innerHTML = testeJson[a].junto;
-            break;
         }
         
+        else if(testeJson[a].card2 == x){
+            if(testeJson[a].card1 == y){
+                return 1;
+            }
+        }
     }
-
+    return 0;
 }
 
+function goSidebar(carta){
+    for(let a = 1; a < testeJson.length+1; a++){
+        if(testeJson[a-1].card1 == carta || testeJson[a-1].card2 == carta){
+            var cartaAcertada = a*1000; 
+            var informacao = a*100;
+            document.getElementById(cartaAcertada.toString()).style.display='flex';
+            document.getElementById(informacao.toString()).innerHTML = testeJson[a-1].junto;
+            break;
+        }
+    }
+}
 
-
-
+function mostraTotal(id){
+    document.getElementById('texto').innerHTML = testeJson[(parseInt(id)/100)-1].total;
+}
 
 function sidebar(e,e1,e2) {
     var botao = document.getElementById("botaoInfo");
@@ -172,10 +145,13 @@ addEventListener("click", (e) => {
             for(let i = 0; i < cartas[x].length; i++){
                 if(cartas[x][i].className === "carta") {
                     var teste = cartas[x][i]
-                    if(certo)
-                        console.log(teste.lastElementChild.style.backgroundColor = "green")
-                    else
+                    if(certo){
+                        teste.lastElementChild.style.backgroundColor = "#16c441";
+                        goSidebar(card1);
+                    }
+                    else{   
                         teste.classList.toggle("flip")
+                    }
                 }
             }
         }

@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    user-select: none;
 }
 
 body {
@@ -24,6 +25,7 @@ body {
 img{
     width: 150px;
     height: 150px;
+
 }
 
 .titulo{
@@ -42,7 +44,28 @@ img{
                3px 0px 0px #000;
 }
 
-.escolherTema{
+#Botoes{
+    width: 50vw;
+    height: 20vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+label {
+    white-space: nowrap;
+    font-size: 30px;
+    color: #FBE400;
+    font-weight: bolder;
+}
+
+#tema {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#escolherTema{
     background-color: #FBE400;
     border: none;
     color: black;
@@ -64,12 +87,5 @@ img{
     font-size: 30px;
     border: 2px solid #000000;
     border-radius: 12px;
-  }
-
-  #Botoes{
-      width: 50vw;
-      height: 20vh;
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-evenly;
+    cursor: pointer;
   }
