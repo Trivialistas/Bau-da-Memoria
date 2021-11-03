@@ -257,3 +257,42 @@ body {
     padding: 5px 15px;
     cursor: pointer;
 }
+
+/* RESPONSIVIDADE */
+
+@media only screen and (max-width: 1440px) and (max-height: 900px){
+    .bau {
+        width: 11rem;
+        height: 5.5rem;
+    }
+    
+    .conteudo {
+        width: 11rem;
+        height: 5.5rem;
+        font-size: 15.5px;
+    }
+
+    #menu-lateral {
+        width: 25vw;
+    }
+
+    .informacao {
+        width: 18rem;
+    }
+
+    #fundoPreto {
+        width: 73.5vw;
+    }
+
+    #menuInfo {
+        width: 45rem;
+        height: 30rem;
+        margin: 0rem 10rem;
+    }
+
+    .conteudoInfo {
+        font-size: 30px;
+        width: 40rem;
+        height: 20rem;
+    }
+}
