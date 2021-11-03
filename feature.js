@@ -78,22 +78,22 @@ document.querySelector('select').addEventListener('change', function(e){
 window.onload = makeInfo();
 function makeInfo(){
     var lastname = localStorage.getItem("key");
-    console.log(lastname)
     let vetorCartas = [];
     let x;
-    if(lastname == "Futebol"){
-        oficial = Futebol;
-        document.getElementById("Futebol").selected = true;
-    }
-    else if(lastname == "Filmes"){
+    if(lastname == "Filmes"){
         oficial = Filmes;
         document.getElementById("Filmes").selected = true;
+    }
+    else if(lastname == "Futebol"){
+        oficial = Futebol;
+        document.getElementById("Futebol").selected = true;
     }
     else if(lastname == "EventosMarcantes"){
         oficial = EventosMarcantes;
         document.getElementById("EventosMarcantes").selected = true;
     }
     else if(lastname == "Paises"){
+        console.log("object")
         oficial = Paises;
         document.getElementById("Paises").selected = true;
     }
@@ -108,6 +108,7 @@ function makeInfo(){
     for(x = 0; x < vetorCartas.length; x++){
         document.getElementById(x.toString()).innerHTML = vetorCartas[x];
     }
+    localStorage.removeItem("key")
 }
 
 function checkCard(x,y){ 

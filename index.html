@@ -19,19 +19,18 @@
         <label for="escolherTema">Escolher o tema:</label>
         <select required id="escolherTema">
             <option value="primeiro" selected disabled>Escolha outro tema</option>
-            <option onclick="escolheTema(this.value)" value="Filmes Clássicos">Filmes Clássicos</option>
-            <option onclick="escolheTema(this.value)" value="Futebol">Futebol</option>
-            <option onclick="escolheTema(this.value)" value="Paises">Paises</option>
-            <option onclick="escolheTema(this.value)" value="EventosMarcantes">Eventos Marcantes</option>
+            <option value="Filmes Clássicos">Filmes Clássicos</option>
+            <option value="Futebol">Futebol</option>
+            <option value="Paises">Paises</option>
+            <option value="EventosMarcantes">Eventos Marcantes</option>
         </select>
         <input type="submit" class="botao" value="Jogar" />
     </form>
     <script>
-        function escolheTema(value){
-            localStorage.setItem("key", value);
+        document.querySelector('select').addEventListener('change', function(e){
+            localStorage.setItem("key", e.target.value);
             var lastname = localStorage.getItem("key");
-            console.log(lastname, 'teste')
-        }
+        });
     </script>
 </body>
 
