@@ -1,0 +1,20 @@
+{
+  "name": "bau-da-memoria",
+  "version": "1.0.0",
+  "description": "Jogo da memoria",
+  "main": "feature.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Trivialistas/Bau-da-Memoria.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Trivialistas/Bau-da-Memoria/issues"
+  },
+  "homepage": "https://github.com/Trivialistas/Bau-da-Memoria#readme"
+}
