@@ -296,3 +296,20 @@ body {
         height: 20rem;
     }
 }
+
+@media only screen and (max-width: 1366px) and (max-height: 768px){
+    #tabuleiro {
+        margin-right: 12rem;
+    }
+
+    .bau {
+        width: 10rem;
+        height: 4.5rem;
+    }
+    
+    .conteudo {
+        width: 10rem;
+        height: 4.5rem;
+        font-size: 13.5px;
+    }
+}
