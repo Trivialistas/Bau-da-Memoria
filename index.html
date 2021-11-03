@@ -17,18 +17,22 @@
 
     <form action="/jogo.html" id="Botoes">
         <label for="escolherTema">Escolher o tema:</label>
-        <select required id="escolherTema" onfocus='this.size=6;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
-            <option onclick="escolheTema(this.value)" value="Músicas anos 60">Músicas anos 60</option>
-            <option onclick="escolheTema(this.value)" value="Músicas anos 70">Músicas anos 70</option>
-            <option onclick="escolheTema(this.value)" value="Músicas anos 80">Músicas anos 80</option>
+        <select required id="escolherTema">
+            <option value="primeiro" selected disabled>Escolha outro tema</option>
             <option onclick="escolheTema(this.value)" value="Filmes Clássicos">Filmes Clássicos</option>
-            <option onclick="escolheTema(this.value)" value="Famosos">Famosos</option>
-            <option onclick="escolheTema(this.value)" value="Livros">Livros</option>
             <option onclick="escolheTema(this.value)" value="Futebol">Futebol</option>
-            <option onclick="escolheTema(this.value)" value="Carros">Carros</option>
+            <option onclick="escolheTema(this.value)" value="Paises">Paises</option>
+            <option onclick="escolheTema(this.value)" value="EventosMarcantes">Eventos Marcantes</option>
         </select>
         <input type="submit" class="botao" value="Jogar" />
     </form>
+    <script>
+        function escolheTema(value){
+            localStorage.setItem("key", value);
+            var lastname = localStorage.getItem("key");
+            console.log(lastname, 'teste')
+        }
+    </script>
 </body>
 
 </html>
