@@ -83,6 +83,10 @@ function makeInfo(){
         oficial = Paises;
         document.getElementById("Paises").selected = true;
     }
+    else {
+        oficial = FilmesClassicos;
+        document.getElementById("Filmes").selected = true;
+    }
 
     for(x = 0; x < oficial.length; x++){
         vetorCartas.push(oficial[x].card1);
