@@ -32,7 +32,8 @@
 /*----------------------------------------- Header -----------------------------------------*/
 
 header {
-    background-image: linear-gradient(to right,orange,rgb(255, 217, 0));    
+    /* background-image: linear-gradient(to left,rgb(235, 118, 10),orange);    */
+    background-color: rgb(78, 46, 12) ;
     height: 12vh;
     display: flex;
     justify-content: space-between;
@@ -62,7 +63,23 @@ header {
     display: none;
 }
 
+.temaTitulo{
+    color: yellow;
+    width: 20rem;
+    margin-right: 5rem;
+    padding: 5px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.temaTitulo p {
+    font-size: 35px;
+}
+
 #acertados {
+    width: 12rem;
     background-color: yellow;
     border: 3px solid black;
     border-radius: 10px;
@@ -72,6 +89,10 @@ header {
     box-shadow: 4px 4px rgb(59, 35, 24);
     cursor: pointer;
     z-index: 1;
+}
+
+#acertados:hover,.botaoInfo:hover,.voltar:hover,#temas:hover {
+    background-color: orange;    
 }
 
 /*----------------------------------------- Body -----------------------------------------*/
@@ -174,6 +195,19 @@ body {
     display: none;
     padding: 0px 10px;
     overflow-y: auto;
+}
+
+footer {
+    width: 100rem;
+    height: 4rem;
+    display: flex;
+}
+
+#explicacao {
+    font-size: 30px;
+    margin-left: 16rem;
+    margin-top: 1rem;
+    display: none;
 }
 
 /* Info que abre no menu lateral */
