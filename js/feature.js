@@ -69,23 +69,28 @@ function makeInfo(){
     let x;
     if(lastname == "Filmes"){
         oficial = FilmesClassicos;
-        document.getElementById("Filmes").selected = true;
+        var theme = "Filmes Clássicos";
+        // document.getElementById("Filmes").selected = true;
     }
     else if(lastname == "Futebol"){
         oficial = Futebol;
-        document.getElementById("Futebol").selected = true;
+        var theme = "Futebol";
+        // document.getElementById("Futebol").selected = true;
     }
     else if(lastname == "EventosMarcantes"){
         oficial = EventosMarcantes;
-        document.getElementById("EventosMarcantes").selected = true;
+        var theme = "Eventos Marcantes";
+        // document.getElementById("EventosMarcantes").selected = true;
     }
     else if(lastname == "Paises"){
         oficial = Paises;
-        document.getElementById("Paises").selected = true;
+        var theme = "Países";
+        // document.getElementById("Paises").selected = true;
     }
     else {
         oficial = FilmesClassicos;
-        document.getElementById("Filmes").selected = true;
+        var theme = "Filmes Clássicos";
+        // document.getElementById("Filmes").selected = true;
     }
 
     for(x = 0; x < oficial.length; x++){
@@ -98,6 +103,7 @@ function makeInfo(){
     for(x = 0; x < vetorCartas.length; x++){
         document.getElementById(x.toString()).innerHTML = vetorCartas[x];
     }
+    document.getElementById("temaAtual").innerHTML = theme;
 }
 
 function checkCard(x,y){ 
@@ -136,27 +142,35 @@ function mostraTotal(id){
 function sidebar(e,e1,e2) {
     var texto = document.querySelectorAll(".textoInfo");
     var direita = document.getElementById("tabuleiro");
+    var p = document.getElementById("explicacao");
     if(sidebarra === false){
         sidebarra = true;
+        document.getElementById("acertados").innerHTML = "Voltar";
         document.getElementById(e).style.display = 'block';
         direita.style.marginRight = '24rem';
+        p.style.marginLeft = '5rem';
         texto.forEach(element => {
             element.innerHTML = "+ informações";
         });
     }
     else if(sidebarra === true && quadrado === true){
         sidebarra = false;
+        document.getElementById("acertados").innerHTML = "Acertados";
         document.getElementById(e).style.display = 'none';
         direita.style.marginRight = '0rem';
+        p.style.marginLeft = '16rem';
         preto(e2);
         info(e1);
     }
     else if(sidebarra === true){
         sidebarra = false;
+        document.getElementById("acertados").innerHTML = "Acertados";
         document.getElementById(e).style.display = 'none';
         direita.style.marginRight = '0rem';
+        p.style.marginLeft = '16rem';
     }
     direita.style.transition = 'all 0.3s';
+    p.style.transition = 'all 0.3s';
     texto.forEach(element => {
         element.style.fontSize = '20px'
     });
@@ -206,9 +220,11 @@ addEventListener("click", (e) => {
                 if(cartas[x][i].className === "carta") {
                     var carta = cartas[x][i]
                     if(card1 == 0)
-                        card1 = carta.lastElementChild.firstElementChild.innerHTML
-                    else
+                    card1 = carta.lastElementChild.firstElementChild.innerHTML
+                    else {
                         card2 = carta.lastElementChild.firstElementChild.innerHTML
+                        document.getElementById("explicacao").style.display = 'none';
+                    }
                 }
             }
         }
@@ -223,6 +239,7 @@ addEventListener("click", (e) => {
                     }
                     else{   
                         carta.classList.toggle("flip")
+                        
                     }
                 }
             }
@@ -237,7 +254,8 @@ addEventListener("click", (e) => {
             caminhozinho.classList.toggle("flip")
             cartas[cartasViradas] = caminho;
             cartasViradas++;
+            document.getElementById("explicacao").style.display = 'block';
             return
-        }
+        }        
     }            
 })
