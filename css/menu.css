@@ -48,18 +48,27 @@ img{
     width: 50vw;
     height: 20vh;
     display: flex;
-    align-items: flex-start;
+    flex-direction: column;
     justify-content: space-around;
+    align-items: center;
 }
 
 label {
     white-space: nowrap;
-    font-size: 30px;
-    color: #FBE400;
+    font-size: 35px;
+    color: black;
     font-weight: bolder;
+    margin-right: 1rem;
 }
 
 #tema {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.textoBotao {
+    width: 10rem;
     display: flex;
     justify-content: space-around;
     align-items: center;
